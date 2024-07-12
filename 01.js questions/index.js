@@ -73,13 +73,33 @@
 // a = 4
 
 
-// HOISTING
+// HOISTING => when variables & functions are moved to the top of their containing scope during compilation phase, before the code is executed, only declarations are hoisted not initializations
+// var is hoisted throw undefined
+// let & const are hoisted but accessing before declaration throw error
 
 // var count = undefined; it will get saved like this in creation phase
 
 // console.log(count); // we get undefined coz we declare the var but not assign it
 // var count = 1;
 
+// console.log(count);
+// let count = 1 // it is declare in scope script as  undefined and in temporal deadzone (time between declaration and initialisation of let & const variables ) value is declare of var
+// var count2 = 2
 
-console.log(num);
-let num = 4;
+
+// function abc() {
+//     console.log(a);
+
+//     var a = 10
+// }
+// abc() // value is undefined it is hoisted
+
+// function abc() {
+//     console.log(a, b, c);
+
+//     const c = 30
+//     let b = 20 
+//     var a = 10 
+//     // let & const is initialize in temporal deadzone(when variables in scope arent declare.) 
+// }
+// abc()
